@@ -1,34 +1,34 @@
 package co.edu.unipiloto.estdatos.tallergen.mundo;
 
-public class Casilleros {
+public class Casilleros <T>{
 
-	private Casillero c1;
-	private Casillero c2;
+	private Casillero <T> c1;
+	private Casillero <T> c2;
 
 	public Casilleros()
 	{
-		c1=new Casillero();
-		c2=new Casillero();
+		c1=new Casillero<>();
+		c2=new Casillero<>();
 
 	}
 
 
-	public int almacenar(Producto producto) {
+	public int almacenar(T producto) {
 
 		if(c1.estaDesocupado())
 		{
-			c1.agregar(producto);
+			c1.agregar((Producto) producto);
 			return 1;
 		}
 		else if(c2.estaDesocupado())
 		{
-			c2.agregar(producto);
+			c2.agregar((Producto) producto);
 			return 2;
 		}
 		return -1;
 	}
 
-	public Producto despachar(int num) {
+	public T despachar(int num) {
 
 		switch(num)
 		{
