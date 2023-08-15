@@ -34,8 +34,10 @@ public class Casilleros <T>{
 		{
 		case 1: return c1.despachar();
 		case 2: return c2.despachar();
+                default:
+                return null;
 		}
-		return null;
+		
 	}
 
 	public void verProductos() {
